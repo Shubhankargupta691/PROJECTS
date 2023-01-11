@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sorting Visualizer </title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="sorting,sort,bubble,selection,quick,merge,visualization,animation">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        <meta http-equiv="expires" content="43200"/>
+
+        <meta property="og:title" content="Sorting Visualizer"/>
+
+
+        <meta property="og:image" content="/images/og.png" />
+        <meta property="og:image:width" content="540"/>
+        <meta property="og:image:height" content="494"/>
+
+        <link rel="manifest" href="jason/manifest.json">
+
+        <link href="FONT/Material_Icons.css" rel="stylesheet">
+        <link href="FONT/Jura.css" rel="stylesheet">
+        <link href="FONT/Ubuntu.css" rel="stylesheet">
+        <link href="FONT/Oxygen.css" rel="stylesheet">
+        <link href="FONT/Electrolyze.css" rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "CSS files/base.css">
+        <link href="AOS/aos.css" rel="stylesheet">
+
+        <noscript>JavaScript is required for this website. Please allow JavaScript and refresh the page.</noscript>
+
+        <meta name="description" content="A visualization of 15+ sorting algorithms, including Quick Sort, Merge Sort, Selection Sort and more!">
+        <meta name="robots" content="index, follow">
+        <link rel= "stylesheet" type= "text/css" href= "CSS files/index.css">
+        <script type="text/javascript" src="javascript/index.js" defer></script>
+
+    </head>
+
+    <body>
+
+    <div class="sidenav" id="sidenav">
+
+        <a class="sidenav-title no-remove"   href="/">
+            <i class="material-icons icon">
+                home</i>
+            Home
+        </a>
+
+        <div id="sep" class="no-remove"></div>
+        <div class="sidenav-title no-remove">
+            <i class="material-icons icon">
+                sort
+            </i> Sorts
+        </div>
+
+        <div class="sidenav-subtitle no-remove">LOGARITHMIC</div>
+        <a href="/quicksort" class="sidenav-element no-remove">Quick Sort</a>
+        <a href="/mergesort" class="sidenav-element no-remove">Merge Sort</a>
+        <div class="sidenav-subtitle no-remove">QUADRATIC</div>
+
+        <a href="/bubblesort" class="sidenav-element no-remove">Bubble Sort</a>
+        <a href="/selectionsort" class="sidenav-element no-remove">Selection Sort</a>
+        <a href="SORTINGS/Insertion Sort/insertionSort.html" target="_blank">Insertion Sort</a>
+
+        <div class="sidenav-subtitle no-remove">WEIRD</div>
+
+    </div>
+
+        </div>
+
+        <div class="topnav">
+            <a href="/" class="topnav-element">SORTING VISUALIZER</a>
+
+        </div>
+        
+<div id="header"><span id="first-header">SORTING</span><br><span id="second-header">VISUALIZER</span></div>
+<div id="cover">
+    <div id="description-box">
+        <h2 style="font-family: 'Electrolyze', Courier, monospace;">
+            Sorting Algorithms
+        </h2>
+        <div class="description-content">
+            <p>Sorting algorithms are used to sort a data structure according to a specific order relationship, such as numerical order or lexicographical order.</p>
+            <p>
+                This operation is one of the most important and widespread in computer science.
+                For a long time, new methods have been developed to make this procedure faster and faster.
+            </p>
+             <p>
+                     There are currently hundreds of different sorting algorithms, each with its own specific characteristics.
+                They are classified according to two metrics: space complexity and time complexity.<br><br>
+                Those two kinds of complexity are represented with
+                <a href="https://www.programiz.com/dsa/asymptotic-notations#:~:text=Asymptotic%20notations%20are%20the%20mathematical,linear%20i.e.%20the%20best%20case." target="_blank">asymptotic notations</a>, mainly with the symbols O, <span class="symbol">Θ</span>, <span class="symbol">Ω</span>, representing
+            respectively the upper bound, the tight bound, and the lower bound of the algorithm's complexity, specifying in brackets an expression in terms of
+            <code><var>n</var></code>, the number of the elements of the data structure.<br><br>
+            Most of them fall into two categories:
+            </p>
+            <ul>
+                <li>Logarithmic<br>
+                    The complexity is proportional to the binary logarithm (i.e to the base 2) of <code><var>n</var></code>.<br>
+                    An example of a logarithmic sorting algorithm is Quick sort, with space and time complexity O<code>(n × log n)</code>.<br><br>
+                </li>
+                <li>Quadratic<br>
+                    The complexity is proportional to the square of <code><var>n</var></code>.<br>
+                    An example of a quadratic sorting algorithm is Bubble sort, with a time complexity of O<code>(n<sup>2</sup>)</code>.<br>
+                </li>
+            </ul>
+            <p>
+                Space and time complexity can also be further subdivided into 3 different cases: best case, average case and worst case.
+            </p>
+            <p>
+                Sorting algorithms can be difficult to understand and it's easy to get confused.
+                We believe visualizing sorting algorithms can be a great way to better understand their functioning while having fun!
+            </p>
+            <a href="sorting .html" target="_self">
+            <button id="sort-btn" class="ripple-sort-btn open">SORTS</button></a>
+        </div>
+    </div>
+</div>
+
+
+
+ <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content" style="margin-left:0;">
+                    <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORTING VISUALIZER</span><br>
+                    &emsp;Shubhankar Gupta<br>
+                    &emsp;Saurabh Pandey<br>
+                    &emsp;Vaibhav Bajpai<br>
+                </div>
+                <div class="footer-content">
+                    <span class="footer-title">Contacts:</span><br>
+                    &emsp;shubhankar.21b1541159@abes.ac.in<br>
+                    &emsp;saurabh.21b1541049@abes.ac.in<br>
+                    &emsp;vaibhav.21b1541085@abes.ac.in<br>
+                </div>
+                <div class="footer-content">
+                    <span class="footer-title">Reference:</span><br>
+                    <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://github.com/Shubhankargupta691" target="_blank">
+                        &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                        <span style="padding-left: 5px;">GitHub</span>
+                    </a>
+                    <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                        &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                        <span style="padding-left: 5px;">Wikipedia</span>
+                    </a>
+                </div>
+            </div>
+
+           
+        </footer>
+    </body>
+</html>

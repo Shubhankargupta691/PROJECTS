@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort Visualizer 
+- 
+Quick Sort
+
+</title>
+<link rel="manifest" href="static/css/JS/sorts/manifest.json">
+<link href="FONT/Material Icons.css" rel="stylesheet">
+<link href="FONT/Jura.css" rel="stylesheet">
+<link href="FONT/Ubuntu.css" rel="stylesheet">
+<link href="FONT/Oxygen.css" rel="stylesheet">
+<link href="FONT/Electrolize.css" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "static/css/base.css">
+<link href="AOS/aos.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="devicon.min.css">
+<link rel="stylesheet" href="static/css/others/highlights.css">
+<link rel="stylesheet" type="text/css" href="static/css/base_sort.css">
+
+
+<script href="static/JS/others/highlight.js" defer></script>
+<script src="static/css/JS/others/highlights.js" defer></script>
+
+ <!-- linking style.css -->
+<link href="Sorting_in_js/style.css" rel="stylesheet" />
+</head>
+<div class="topnav">
+<a class="topnav-element">SORTING VISUALIZER</a>
+
+</div>
+<!-- header -->
+<header>
+ <nav>
+     <div class="navBar" style="border-top-style: solid;border-top-width: 15px;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 0.5cm;margin-top: -10px;">
+            <div id="newArray">
+                <button  class="btn1"
+                onclick="renderNewBars(),disable()"
+                style="-webkit-margin-bottom-collapse:0px;">
+           Generate New Array</button>
+
+
+            </div>
+            <div class="range" id="input">
+                <span id="size">Size
+                    <input class="slider" id="arraySize" type="range" min="5" max="100" step=1 value=50>
+                </span>
+                <span id="speed">Speed
+                    <input id="speedInput" type="range" min="10" max="300" stepDown=10 value=150>
+                </span>
+            </div>
+            <div>
+                <button class="sortButton quickSort">Quick Sort</button>
+            </div>
+        </div>
+    </nav>
+</header>
+ <body>
+
+    <div class="bars" id="bars"></div>
+  <!-- linking index.js -->
+  <script src="Sorting_in_js/script.js"></script>
+ <script src="Sorting_in_js/sorting.js"></script>
+ </body>
+
+
+
+<div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+            
+<p>
+Quick Sort is a sorting algorithm based on splitting the data structure in smaller partitions and sort them recursively until the data structure is sorted.
+</p>
+<p>
+This division in partitions is done based on an element, called pivot:
+all the elements bigger than the pivot get placed on the right side of the structure, the smaller ones to the left, creating two partitions.
+Next, this procedure gets applied recursively to the two partitions and so on.
+</p>
+<p>
+This partition technique based on the pivot is called <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" target="_blank">Divide and conquer</a>.
+It's a performant strategy also used by other sorting algorithms, such as <a href="/mergesort">Merge Sort</a>.
+</p>
+            <br>
+            <p>Lets take  example of an arrya:<p>[9,-3,5,2,6,8,-6,1,3]</p> </p>
+            <img src="images/quick%20sort.png">
+        </div>
+
+        <div class="table-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
+            <table class="sort-table aos-init aos-animate" data-aos="flip-left">
+                <tbody><tr>
+                    <th>
+                        Average Complexity
+                    </th>
+                    <td>
+
+                        O(n x log n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Best Case
+                    </th>
+                    <td>
+
+                        O(n x log n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Worst Case
+                    </th>
+                    <td>
+
+                        O(n<sup>2</sup>)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Space Complexity
+                    </th>
+                    <td>
+
+                        O(n)
+
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+    </div>
+    <div class="menu-box">
+
+        <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+        <div id="menu-code" data-aos="fade-right" class="aos-init aos-animate">
+            <div class="menu-btns" id="menu-btns">
+                <button class="menu-btns-activated">
+                    <img src="static/images/c_icon.png" width="32" height="32" title="C" alt="C">
+                </button>
+            </div>
+
+            <div id="code-content">
+                <pre>
+                    <code id="code" class="c hljs">
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>{
+  <span class="hljs-keyword">int</span> t = *a;
+  *a = *b;
+  *b = t;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+
+  <span class="hljs-keyword">int</span> pivot = <span class="hljs-built_in">array</span>[high];
+  <span class="hljs-keyword">int</span> i = (low - <span class="hljs-number">1</span>);
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = low; j &lt; high; j++) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[j] &lt;= pivot) {
+      i++;
+      swap(&amp;<span class="hljs-built_in">array</span>[i], &amp;<span class="hljs-built_in">array</span>[j]);
+    }
+  }
+
+  swap(&amp;<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>], &amp;<span class="hljs-built_in">array</span>[high]);
+  <span class="hljs-keyword">return</span> (i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+  <span class="hljs-keyword">if</span> (low &lt; high) {
+
+    <span class="hljs-keyword">int</span> pi = partition(<span class="hljs-built_in">array</span>, low, high);
+
+    quickSort(<span class="hljs-built_in">array</span>, low, pi - <span class="hljs-number">1</span>);
+
+    quickSort(<span class="hljs-built_in">array</span>, pi + <span class="hljs-number">1</span>, high);
+  }
+}</code>
+                </pre>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content" style="margin-left:0;">
+            <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+            &emsp;Shubhankar Gupta<br>
+            &emsp;Saurabh Pandey<br>
+            &emsp;Vaibhav Bajpai<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Contacts:</span><br>
+            &emsp;shubhankar.21b1541159@abes.ac.in<br>
+            &emsp;saurabh.21b1541049@abes.ac.in<br>
+            &emsp;vaibhav.21b1541085@abes.ac.in<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Reference:</span><br>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="#" target="_blank">
+                &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                <span style="padding-left: 5px;">GitHub</span>
+            </a>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                <span style="padding-left: 5px;">Wikipedia</span>
+            </a>
+        </div>
+    </div>
+
+   
+</footer>
+    </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Visualizer
+        -
+       Merge Sort
+
+    </title>
+    <link rel="manifest" href="static/css/JS/sorts/manifest.json">
+    <link href="FONT/Material Icons.css" rel="stylesheet">
+    <link href="FONT/Jura.css" rel="stylesheet">
+    <link href="FONT/Ubuntu.css" rel="stylesheet">
+    <link href="FONT/Oxygen.css" rel="stylesheet">
+    <link href="FONT/Electrolize.css" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "static/css/base.css">
+    <link href="AOS/aos.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="devicon.min.css">
+    <link rel="stylesheet" href="static/css/others/highlights.css">
+    <link rel="stylesheet" type="text/css" href="static/css/base_sort.css">
+
+
+    <script href="static/JS/others/highlight.js" defer></script>
+    <script src="static/css/JS/others/highlights.js" defer></script>
+
+
+    <link href="Sorting_in_js/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+</div>
+
+<div class="topnav">
+    <a href="/" class="topnav-element">SORTING VISUALIZER</a>
+</div>
+
+<!-- header -->
+<header>
+    <nav>
+        <div class="navBar" style="border-top-style: solid;border-top-width: 15px;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 0.5cm;margin-top: -10px;">
+            <div id="newArray">
+                <button  class="btn1"
+                         onclick="renderNewBars(),disable()"
+                         style="-webkit-margin-bottom-collapse:0px;">
+                    Generate New Array</button>
+
+
+            </div>
+            <div class="range" id="input">
+                <span id="size">Size
+                    <input class="slider" id="arraySize" type="range" min="5" max="100" step=1 value=50>
+                </span>
+                <span id="speed">Speed
+                    <input id="speedInput" type="range" min="10" max="300" stepDown=10 value=150>
+                </span>
+            </div>
+            <div>
+                <button class="sortButton quickSort">Merge Sort</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Merge Sort body -->
+<body>
+
+<div class="bars" id="bars"></div>
+<!-- linking index.js -->
+<script src="Sorting_in_js/merge.js"></script>
+<script src="Sorting_in_js/sorting.js"></script>
+</body>
+
+<div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+            
+<p>
+Merge Sort is a sorting algorithm based on the Divide-and-Conquer technique, like <a href="/quicksort">Quick Sort</a>.
+It can be implemented iteratively or recursively, using the Top-Down and Bottom-Up algorithms respectively.
+We represented the first one.
+</p>
+<p>
+The algorithm divides the data structure recursively until the subsequences contain only one element.
+At this point, the subsequences get merged and ordered sequentially.
+To do so, the algorithm progressively builds the sorted sublist by adding each time the minimum element of the next two unsorted subsequences until there is only one sublist remaining.
+This will be the sorted data structure.
+<br>
+Let's take a look at how Merge Sort works on an array such as <p>[4, 8, 7, 2, 11, 1, 3]:</p>
+<img src="images/merge-sort.png " height="600px" width="500px"  title="merge Sort">
+</p>
+
+
+        </div>
+
+        <div class="table-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
+            <table class="sort-table aos-init aos-animate" data-aos="flip-left">
+                <tbody><tr>
+                    <th>
+                        Average Complexity
+                    </th>
+                    <td>
+
+                        O(n × log n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Best Case
+                    </th>
+                    <td>
+
+                        O(n × log n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Worst Case
+                    </th>
+                    <td>
+
+                        O(n × log n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Space Complexity
+                    </th>
+                    <td>
+
+                        O(n)
+
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+    </div>
+        <div class="menu-box">
+
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+            <div id="menu-code" data-aos="fade-right" class="aos-init aos-animate">
+                <div class="menu-btns" id="menu-btns">
+                    <button class="menu-btns-activated"><img src="static/images/c_icon.png" width="32" height="32" title="C" alt="C"></button>
+
+                </div>
+                <div id="code-content">
+                <pre>
+                    <code id="code" class="c hljs">
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> r)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i, j, k;
+    <span class="hljs-keyword">int</span> n1 = m - l + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> n2 = r - m;
+
+    <span class="hljs-keyword">int</span> L[n1], R[n2];
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n1; i++)
+        L[i] = arr[l + i];
+    <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; n2; j++)
+        R[j] = arr[m + <span class="hljs-number">1</span> + j];
+
+    i = <span class="hljs-number">0</span>;
+    j = <span class="hljs-number">0</span>;
+    k = l;
+
+    <span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) {
+        <span class="hljs-keyword">if</span> (L[i] &lt;= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        <span class="hljs-keyword">else</span> {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    <span class="hljs-keyword">while</span> (i &lt; n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    <span class="hljs-keyword">while</span> (j &lt; n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (l &lt; r) {
+        <span class="hljs-keyword">int</span> m = l + (r - l) / <span class="hljs-number">2</span>;
+
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + <span class="hljs-number">1</span>, r);
+        merge(arr, l, m, r);
+    }
+}</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content" style="margin-left:0;">
+            <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+            &emsp;Shubhankar Gupta<br>
+            &emsp;Saurabh Pandey<br>
+            &emsp;Vaibhav Bajpai<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Contacts:</span><br>
+            &emsp;shubhankar.21b1541159@abes.ac.in<br>
+            &emsp;saurabh.21b1541049@abes.ac.in<br>
+            &emsp;vaibhav.21b1541085@abes.ac.in<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Reference:</span><br>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="#" target="_blank">
+                &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                <span style="padding-left: 5px;">GitHub</span>
+            </a>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                <span style="padding-left: 5px;">Wikipedia</span>
+            </a>
+        </div>
+    </div>
+
+
+</body>
+</html>

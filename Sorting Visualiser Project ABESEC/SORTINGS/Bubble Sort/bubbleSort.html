@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+        <title>Sort Visualizer 
+- 
+BUBBLE Sort
+
+</title>
+        <meta property="og:image:width" content="540"/>
+        <meta property="og:image:height" content="494"/>
+
+        <link rel="manifest" href="static/css/JS/sorts/manifest.json">
+        <link href="FONT/Material Icons.css" rel="stylesheet">
+        <link href="FONT/Jura.css" rel="stylesheet">
+        <link href="FONT/Ubuntu.css" rel="stylesheet">
+        <link href="FONT/Oxygen.css" rel="stylesheet">
+        <link href="FONT/Electrolize.css" rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "static/css/base.css">
+        <link href="AOS/aos.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="devicon.min.css">
+        <link rel="stylesheet" href="static/css/others/highlights.css">
+        <link rel="stylesheet" type="text/css" href="static/css/base_sort.css">
+                <script>src="static/css/JS/sorts/quicksort.js"</script>
+
+        <script href="static/JS/others/highlight.js" defer></script>
+        <script src="static/css/JS/others/highlights.js" defer></script>
+    </head>
+
+ <div class="topnav">
+     <a class="topnav-element">SORTING VISUALIZER</a>
+ </div>
+
+ <br>
+
+
+ <!-- header -->
+        <header>
+
+            <!-- linking style.css -->
+            <link href="Sorting_in_js/Bubble_Sort.css" rel="stylesheet" />
+
+            <nav>
+                <div class="navBar" style="border-top-style: solid;border-top-width: 15px;margin-top: -55px;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 0.5cm;">
+                    <div id="newArray">
+                        <button  class="btn1"
+                        onclick="renderNewBars(),disable()"
+                        style="-webkit-margin-bottom-collapse:0px;">
+                   Generate New Array</button>
+
+
+                    </div>
+                    <div class="range" id="input">
+                        <span id="size">Size
+                            <input class="slider" id="arraySize" type="range" min="5" max="100" step=1 value=50>
+                        </span>
+                        <span id="speed">Speed
+                            <input id="speedInput" type="range" min="10" max="300" stepDown=10 value=150>
+                        </span>
+                    </div>
+                    <div>
+                        <button class="btn1"
+                                onclick="bubbleSort(),disable()"
+                                style="margin-right:0px;">
+                                        Bubble Sort</button>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+
+
+ <!--Bubble Sort body -->
+ <body class="body">
+
+    <div class="bars" id="bars"></div>
+ <script src="Sorting_in_js/bubble.js"></script>
+ <script src="Sorting_in_js/sorting.js"></script>
+ </body>
+
+ <div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+
+            <p>
+                Bubble Sort is an iterative sorting algorithm that imitates the movement of bubbles in sparkling water.
+                The bubbles represents the elements of the data structure.
+            </p>
+            <p>
+                The bigger bubbles reach the top faster than smaller bubbles, and this algorithm works in the same way. It iterates through the data structure and for each cycle compares the current element with the next one,
+                swapping them if they are in the wrong order.
+            </p>
+            <p>
+                It's a simple algorithm to implement, but not much efficient: on average, quadratic sorting algorithms with the same time complexity such as <a href="/selectionsort">Selection Sort</a> or <a href="/insertionsort">Insertion Sort</a> perform better.<br>
+                It has several variants to improve its performances, such as <a href="/shakersort">Shaker Sort</a>, <a href="/oddevensort">Odd Even Sort</a> and <a href="/combsort">Comb Sort</a>.
+            </p>
+            <br>
+            <p>Lets take  example of an arrya:<p>[5,3,4,3,6]</p> </p>
+            <img src="images/bubble_sort.jpg">
+        </div>
+
+        <div class="table-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
+            <table class="sort-table aos-init aos-animate" data-aos="flip-left">
+                <tbody><tr>
+                    <th>
+                        Average Complexity
+                    </th>
+                    <td>
+
+                        O(n<sup>2</sup>)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Best Case
+                    </th>
+                    <td>
+
+                        O(n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Worst Case
+                    </th>
+                    <td>
+
+                        O(n<sup>2</sup>)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Space Complexity
+                    </th>
+                    <td>
+
+                        O(1)
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="menu-box">
+
+        <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+        <div id="menu-code" data-aos="fade-right" class="aos-init aos-animate">
+            <div class="menu-btns" id="menu-btns">
+                <button class="menu-btns-activated">
+                    <img src="static/images/c_icon.png" width="32" height="32" title="C" alt="C">
+                </button>
+            </div>
+
+            <div id="code-content">
+                <pre>
+                    <code id="code" class="c hljs">
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubble_sort</span><span class="hljs-params">(<span class="hljs-keyword">long</span> arr[], <span class="hljs-keyword">long</span> n)</span> </span>{
+  <span class="hljs-keyword">long</span> c, d, t;
+
+  <span class="hljs-keyword">for</span> (c = <span class="hljs-number">0</span> ; c &lt; n - <span class="hljs-number">1</span>; c++) {
+    <span class="hljs-keyword">for</span> (d = <span class="hljs-number">0</span> ; d &lt; n - c - <span class="hljs-number">1</span>; d++) {
+      <span class="hljs-keyword">if</span> (arr[d] &gt; arr[d+<span class="hljs-number">1</span>]) {
+        t = arr[d];
+        arr[d] = arr[d+<span class="hljs-number">1</span>];
+        arr[d+<span class="hljs-number">1</span>] = t;
+      }
+    }
+  }
+}
+
+                    </code>
+                </pre>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content" style="margin-left:0;">
+            <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+            &emsp;Shubhankar Gupta<br>
+            &emsp;Saurabh Pandey<br>
+            &emsp;Vaibhav Bajpai<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Contacts:</span><br>
+            &emsp;shubhankar.21b1541159@abes.ac.in<br>
+            &emsp;saurabh.21b1541049@abes.ac.in<br>
+            &emsp;vaibhav.21b1541085@abes.ac.in<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Reference:</span><br>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="#" target="_blank">
+                &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                <span style="padding-left: 5px;">GitHub</span>
+            </a>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                <span style="padding-left: 5px;">Wikipedia</span>
+            </a>
+        </div>
+    </div>
+
+   
+</footer>
+    </body>
+</html>

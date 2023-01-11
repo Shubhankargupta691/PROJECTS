@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(31, 17, 91);
+    color: white;
+    font-family: sans-serif;
+}
+.navBar{
+    padding-top: 2cm;
+    padding-bottom: 1cm;
+}
+.appTitle {
+    text-align: center;
+}
+
+.navBar {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    background-color: #1f0247;
+}
+
+.newArrayButton {
+    background-color: #212529;
+    color: white;
+    font-size: 20px;
+    border-radius: 5%;
+    border-color: white;
+   
+}
+
+.range {
+    margin-top: -5px;
+}
+ 
+.btn1{
+
+    padding: 12px;
+    font-weight: bolder;
+    background-color: #ff0000;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white;
+    margin-top: 1vw;
+    margin-right: 1vw;
+    }
+    .btn2{
+    padding: 12px;
+    font-weight: bolder;
+    background-color: #ff0000;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border: white
+    }
+
+.bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 200px;
+    margin-bottom: 6cm;
+  
+}
+
+.barItem{
+    background: rgb(56, 93, 93);
+    border: 1pt solid black;
+    width: 10px;
+    transition: 0.1s all ease;
+transform: perspective(180);
+top: -24px;
+background-color: rgb(0, 183, 255);
+transition: 0.2s all ease;
+width: 28px;
+text-align: center;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+#input{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}

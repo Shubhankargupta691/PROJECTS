@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+        <title>Sort Visualizer
+Selection SORT
+
+</title>
+        <meta property="og:image:width" content="540"/>
+        <meta property="og:image:height" content="494"/>
+
+        <link rel="manifest" href="static/css/JS/sorts/manifest.json">
+        <link href="FONT/Material Icons.css" rel="stylesheet">
+        <link href="FONT/Jura.css" rel="stylesheet">
+        <link href="FONT/Ubuntu.css" rel="stylesheet">
+        <link href="FONT/Oxygen.css" rel="stylesheet">
+        <link href="FONT/Electrolize.css" rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "static/css/base.css">
+        <link href="AOS/aos.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="devicon.min.css">
+        <link rel="stylesheet" href="static/css/others/highlights.css">
+        <link rel="stylesheet" type="text/css" href="static/css/base_sort.css">
+
+
+        <script href="static/JS/others/highlight.js" defer></script>
+        <script src="static/css/JS/others/highlights.js" defer></script>
+
+         <!-- linking style.css -->
+    <link href="Sorting_in_js/style.css" rel="stylesheet" />
+    </head>
+ <div class="topnav">
+     <a class="topnav-element">SORTING VISUALIZER</a>
+
+ </div>
+
+ <!-- header -->
+ <header>
+
+ 
+
+    <nav>
+        <div class="navBar" style="border-top-style: solid;border-top-width: 12px;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 0.5cm;margin-top: -10px;">
+            <div id="newArray">
+                <button  class="btn1"
+                onclick="renderNewBars(),disable()"
+                style="-webkit-margin-bottom-collapse:0px;">
+           Generate New Array</button>
+
+
+            </div>
+            <div class="range" id="input">
+                <span id="size">Size
+                    <input class="slider" id="arraySize" type="range" min="5" max="100" step=1 value=50>
+                </span>
+                <span id="speed">Speed
+                    <input id="speedInput" type="range" min="10" max="300" stepDown=10 value=150>
+                </span>
+            </div>
+            <div>
+                <button class="btn1"
+                        onclick="selectionSort(),disable()"
+                        style="margin-right:0px;">
+                                Selection Sort</button>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+ <!--Selection Sort body -->
+ <body>
+
+    <div class="bars" id="bars"></div>
+  <!-- linking index.js -->
+  <script src="Sorting_in_js/index.js"></script>
+ <script src="Sorting_in_js/sorting.js"></script>
+ </body>
+
+
+ <div id="sort-cover">
+    <div class="info-parent">
+        <div class="sort-description">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">DESCRIPTION</div>
+
+            <p>
+                Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time.
+                It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.
+            </p>
+            <p>
+                The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the sorted sublist is made up of just one element and it gets progressively filled.
+                For every iteration, the algorithm picks an element on the unsorted sublist and inserts it at the right place in the sorted sublist.
+            </p>
+            <br>
+            <p>Lets take  example of an arrya:<p>[23,56,9,103,77]</p> </p>
+            <img src="images/SelectionSortExample.jpg">
+        </div>
+
+        <div class="table-box">
+            <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">COMPLEXITY</div>
+            <table class="sort-table aos-init aos-animate" data-aos="flip-left">
+                <tbody><tr>
+                    <th>
+                        Average Complexity
+                    </th>
+                    <td>
+
+                        O(n<sup>2</sup>)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Best Case
+                    </th>
+                    <td>
+
+                        O(n)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Worst Case
+                    </th>
+                    <td>
+
+                        O(n<sup>2</sup>)
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Space Complexity
+                    </th>
+                    <td>
+
+                        O(1)
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="menu-box">
+
+        <div style="font-family: 'Jura', Courier, monospace; font-size: 35px;">IMPLEMENTATIONS</div>
+        <div id="menu-code" data-aos="fade-right" class="aos-init aos-animate">
+            <div class="menu-btns" id="menu-btns">
+                <button class="menu-btns-activated">
+                    <img src="static/images/c_icon.png" width="32" height="32" title="C" alt="C">
+                </button>
+            </div>
+
+            <div id="code-content">
+                <pre>
+                    <code id="code" class="c hljs">
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i, key, j;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++) {
+        key = arr[i];
+        j = i - <span class="hljs-number">1</span>;
+
+        <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; key) {
+            arr[j + <span class="hljs-number">1</span>] = arr[j];
+            j = j - <span class="hljs-number">1</span>;
+        }
+        arr[j + <span class="hljs-number">1</span>] = key;
+    }
+}</code>
+                </pre>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content" style="margin-left:0;">
+            <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORT VISUALIZER</span><br>
+            &emsp;Shubhankar Gupta<br>
+            &emsp;Saurabh Pandey<br>
+            &emsp;Vaibhav Bajpai<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Contacts:</span><br>
+            &emsp;shubhankar.21b1541159@abes.ac.in<br>
+            &emsp;saurabh.21b1541049@abes.ac.in<br>
+            &emsp;vaibhav.21b1541085@abes.ac.in<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Reference:</span><br>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="#" target="_blank">
+                &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                <span style="padding-left: 5px;">GitHub</span>
+            </a>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                <span style="padding-left: 5px;">Wikipedia</span>
+            </a>
+        </div>
+    </div>
+
+   
+</footer>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sort Visualizer </title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="sorting,sort,bubble,selection,quick,merge,visualization,animation">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta http-equiv="expires" content="43200"/>
+
+    <meta property="og:title" content="Sort Visualizer"/>
+
+
+    <meta property="og:image" content="/images/og.png" />
+    <meta property="og:image:width" content="540"/>
+    <meta property="og:image:height" content="494"/>
+
+    <link rel="manifest" href="jason/manifest.json">
+
+    <link href="FONT/Material_Icons.css" rel="stylesheet">
+    <link href="FONT/Jura.css" rel="stylesheet">
+    <link href="FONT/Ubuntu.css" rel="stylesheet">
+    <link href="FONT/Oxygen.css" rel="stylesheet">
+    <link href="FONT/Electrolyze.css" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "CSS files/base.css">
+    <link href="AOS/aos.css" rel="stylesheet">
+
+    <noscript>JavaScript is required for this website. Please allow JavaScript and refresh the page.</noscript>
+
+    <meta name="description" content="A visualization of 15+ sorting algorithms, including Quick Sort, Merge Sort, Selection Sort and more!">
+    <meta name="robots" content="index, follow">
+    <link rel= "stylesheet" type= "text/css" href= "CSS files/index.css">
+    <script type="text/javascript" src="javascript/index.js" defer></script>
+
+</head>
+
+<div class="topnav">
+    <a class="topnav-element">SORTING VISUALIZER</a>
+
+</div>
+<div id="header"><span id="first-header">SORTING</span><br><span id="second-header">ALGORITHM</span></div>
+
+        <div id="cover">
+            <div id="description-box">
+                <h2 style="font-family: 'Electrolyze', Courier, monospace;">
+                    Types Sorting Algorithms
+                </h2>
+                 <p> There are two broad types of sorting algorithms</p>
+
+
+                <h1> 1. Quadratic </h1>
+
+                <li>Quadratic<br>
+                    The complexity is proportional to the square of <code><var>n</var></code>.<br>
+                    An example of a quadratic sorting algorithm is Bubble sort, with a time complexity of O<code>(n<sup>2</sup>).</code><br>
+                </li>
+                        <li>
+                            <div>
+                                <!-- "Insertion Sort" button -->
+                                <a href="SORTINGS/Insertion Sort/insertionSort.html" target="_blank">
+                                    <body>
+                                        <button class="btn1"
+                                                onclick="InsertionSort(),disable()"
+                                                style="margin-right:0px;">
+                                            Insertion Sort</button>
+                                    </body>
+                                        </a>
+
+                            <br>
+                                    <!-- "Bubble Sort" button -->
+                                    <a href="SORTINGS/Bubble Sort/bubbleSort.html" target="_blank" >
+                                    <body>
+                                    <button class="btn1"
+                                            onclick="BubbleSort(),disable()"
+                                            style="margin-right:0px;">
+                                        Bubble Sort</button>
+                                    </body> </a>
+                            <br>
+
+                                    <!-- "Selection Sort" button -->
+                                    <a href="SORTINGS/Selection Sort/SelectionSort.html" target="_blank" >  <body>
+                                    <button class="btn1"
+                                            onclick="Selection_Sort(),disable()"
+                                            style="margin-right:0px;">
+                                        Selection Sort</button>
+                                         </body> </a>
+                            </div>
+                        </li>
+                            <br>
+
+                            <h1> 2. Logarithmic </h1>
+
+                            <br>
+
+                <li>Logarithmic<br>
+                    The complexity is proportional to the binary logarithm (i.e to the base 2) of <code><var>n</var></code>.<br>
+                    An example of a logarithmic sorting algorithm is Quick sort, with space and time complexity O<code>(n × log n)</code>.<br><br>
+                </li>
+
+                <br>
+                            <!-- "Merge Sort" button -->
+                            <a href="SORTINGS/MergSort/mergsort.html" target="_blank" >  <body>
+                            <button class="btn1"
+                                    onclick="MergeSort(),disable()"
+                                    style="margin-right:0px;">
+                                Merge Sort</button>
+                             </body></a>
+
+                                <br>
+                        <!-- "Quick Sort" button -->
+                        <a href="SORTINGS/quickSort/QuickSort.html" target="_blank" >   <body>
+                        <button class="btn1"
+                                onclick="QuickSort(),disable()"
+                                style="margin-right:0px;">
+                            Quick Sort</button>
+                             </body></a>
+
+
+                        </li>
+
+            </div>
+        </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content" style="margin-left:0;">
+            <span class="footer-title" style="font-family: 'Jura', Courier, monospace;">SORTING VISUALIZER</span><br>
+            &emsp;Shubhankar Gupta<br>
+            &emsp;Saurabh Pandey<br>
+            &emsp;Vaibhav Bajpai<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Contacts:</span><br>
+            &emsp;shubhankar.21b1541159@abes.ac.in<br>
+            &emsp;saurabh.21b1541049@abes.ac.in<br>
+            &emsp;vaibhav.21b1541085@abes.ac.in<br>
+        </div>
+        <div class="footer-content">
+            <span class="footer-title">Reference:</span><br>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://github.com/Shubhankargupta691" target="_blank">
+                &emsp;<img src="images/Github_icon.png" title="GitHub" alt="github">
+                <span style="padding-left: 5px;">GitHub</span>
+            </a>
+            <a style="display: flex; align-items:center; text-decoration: none; color: #afafaf;" href="https://en.wikipedia.org/wiki/Sorting_algorithm" target="_blank">
+                &emsp;<img src="images/Wikipedia_icon.png" title="Wikipedia" target="_blank">
+                <span style="padding-left: 5px;">Wikipedia</span>
+            </a>
+        </div>
+    </div>
+
+
+</footer>
+</html>
